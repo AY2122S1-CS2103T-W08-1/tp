@@ -208,6 +208,22 @@ Examples:
 * `person John Lim /edit n:John Cena`
 * `p Mary /e n:Little Lamb`
 
+### Adding a person to a group or subgroup : `person /add`
+
+Adds an existing person to a group or subgroup.
+
+Format: `person NAME /add g:GROUP_NAME [sg: SUB_GROUP_NAME]`<br>
+Advanced user Format: `person NAME /a g:GROUP_NAME [sg: SUB_GROUP_NAME]`
+
+* Adds an existing person with the name `NAME` to a `GROUP_NAME`.
+* Optional Argument:
+    * `SUB_GROUP_NAME`: Adds an existing person with the name `NAME` from a `SUB_GROUP_NAME` in `GROUP_NAME`.
+
+Examples:
+
+* `person John Lim /add g:CS2103T`
+* `p John Lim /a g:CS2103T sg:W08`
+
 ### Removing a person from group or subgroup : `person /remove`
 
 Removes an existing person from a group or subgroup.
@@ -215,8 +231,8 @@ Removes an existing person from a group or subgroup.
 Format: `person NAME /remove g:GROUP_NAME [sg:SUB_GROUP_NAME]`<br>
 Advanced user Format:`p NAME /r g:GROUP_NAME [g:SUB_GROUP_NAME]`
 
-* Removes an existing person with the `NAME` from a `GROUP_NAME`.
-* Optional Agrument:
+* Removes an existing person with the name `NAME` from a `GROUP_NAME`.
+* Optional Argument:
     * `SUB_GROUP_NAME`: Removes an existing person with the name `NAME` from a `SUB_GROUP_NAME` in `GROUP_NAME`.
 
 Examples:
@@ -360,6 +376,83 @@ Examples :
 * `group Orbital /note sg: Artemis` will prompt a popup window where the user can edit the notes for Artemis.
 * `g CS2103T /e sg: ip`
 
+### Working with tags
+
+### Creating a tag: `tag /create`
+
+Creates a tag.
+
+Format: `tag /create t:TAG_NAME`<br>
+Advanced user Format: `t /c t:TAG_NAME`
+
+* Creates a new tag with the name `TAG_NAME`.
+* The new tag must not have a same name with other existing tags.
+* The new tag's name must not include backslash (`/`) or colon (`:`).
+
+Examples:
+
+* `tag /create t:AY2020` will create a new tag called AY2020.
+* `t /c t:Important`
+
+### Deleting a tag: `tag /delete`
+
+Deletes an existing tag.
+
+Format: `tag /delete t:TAG_NAME`<br>
+Advanced user Format: `t /d t:TAG_NAME`
+
+Examples:
+
+* `tag /delete t:AY2020` will delete the tag AY2020.
+* `t /d t:Important`
+
+### Editing a tag: `tag tag_name /edit`
+
+Edits the name of an existing tag.
+
+Format: `tag TAG_NAME /edit t:NEW_NAME`<br>
+Advanced user Format: `t TAG_NAME /e g:NEW_NAME`
+
+* Renames an existing tag `TAG_NAME` to `NEW_NAME`.
+* The new tag must not have a same name with other existing tags.
+* The new tag's name must not include backslash (`/`) or colon (`:`).
+
+Examples:
+
+* `tag AY2020 /edit t:AY2021` will rename the tag AY2020 to AY2021
+* `t Orbitan /e t:Orbital`
+
+### Adding a tag to a group: `tag tag_name /add`
+Adds a tag to an existing group.
+
+Format: `tag TAG_NAME /add g:GROUP_NAME [sg:SUB_GROUP_NAME]`<br>
+Advanced user Format: `t TAG_NAME /a g:GROUP_NAME [sg:SUB_GROUP_NAME]`
+
+* Adds an existing tag `TAG_NAME` to `GROUP_NAME`.
+* Optional Argument: 
+	* `SUB_GROUP_NAME`: Adds an existing tag with the name `TAG_NAME` to `SUB_GROUP_NAME` in `GROUP_NAME`.
+
+Examples:
+
+* `tag AY2020 /add g:Orbital` will add the tag AY2020 to group Orbital
+*`t AY2020 /a g:Orbital sg:Artemis`
+
+### Removing a tag from a group: `tag tag_name /remove`
+Removes a tag from an existing group.
+
+Format: `tag TAG_NAME /remove g:GROUP_NAME [sg:SUB_GROUP_NAME]`<br>
+Advanced user Format: `t TAG_NAME /r g:GROUP_NAME [sg:SUB_GROUP_NAME]`
+
+* Removes an existing tag `TAG_NAME` from `GROUP_NAME`.
+* Optional Argument: 
+	* `SUB_GROUP_NAME`: Removes an existing tag with the name `TAG_NAME` from `SUB_GROUP_NAME` in `GROUP_NAME`.
+
+Examples:
+
+* `tag AY2020 /remove g:Orbital` will remove the tag AY2020 from group Orbital
+*`t AY2020 /r g:Orbital sg:Artemis`
+
+
 ## Miscellaneous information
 
 ### Saving the data
@@ -406,19 +499,31 @@ Action | Format | Advanced Format
 
 Action | Format |  Advanced Format
 --------|--------|----------
-**Create** | `group / c g:GROUP_NAME` | `g / c g:GROUP_NAME`
-**Edit** | `group g:GROUP_NAME /edit g:GROUP_NAME` | `g GROUP_NAME /e g:GROUP_NAME`
-**Delete** | `group g:GROUP_NAME /delete g:GROUP_NAME` | `g g:GROUP_NAME /d g:GROUP_NAME`
+**Create** | `group /create g:GROUP_NAME` | `g /c g:GROUP_NAME`
+**Edit** | `group GROUP_NAME /edit g:GROUP_NAME` | `g GROUP_NAME /e g:GROUP_NAME`
+**Delete** | `group /delete g:GROUP_NAME` | `g /d g:GROUP_NAME`
 **Note** | `group g:GROUP_NAME /note` | `g g:GROUP_NAME /n g:GROUP_NAME`
 **Create subgroup** | `group GROUP_NAME /create sg:SUB_GROUP_NAME` | `g g:GROUP_NAME /c sg:SUB_GROUP_NAME`
 **Edit subgroup** | `group GROUP_NAME:SUB_GROUP_NAME /edit sg:SUB_GROUP_NAME` | `g g:GROUP_NAME:SUB_GROUP_NAME /e sg:SUB_GROUP_NAME`
 **Delete subgroup** | `group GROUP_NAME /delete sg:SUB_GROUP_NAME` | `g GROUP_NAME /d sg:SUB_GROUP_NAME`
 **Note subgroup** |  `group GROUP_NAME /note sg:SUB_GROUP_NAME` | `g GROUP_NAME /n sg:SUB_GROUP_NAME`
 
+## Tag
+
+Action | Format |  Advanced Format
+--------|--------|----------
+**Create** | `tag /create t:TAG_NAME` | `t /c t:TAG_NAME`
+**Edit** | `tag TAG_NAME /edit t:TAG_NAME` | `t TAG_NAME /e t:TAG_NAME`
+**Delete** | `tag /delete t:TAG_NAME` | `t /d t:TAG_NAME`
+**Add** | `tag TAG_NAME /add g:GROUP_NAME` | `t TAG_NAME /a g:GROUP_NAME`
+**Remove** | `tag TAG_NAME /remove g:GROUP_NAME` | `t TAG_NAME /r g:GROUP_NAME`
+
 ## General
 
 Action | Format | Advanced Format
 --------|--------|----------
+**Clear** | `clear` | `-`
+**Exit** | `exit` | `-`
 **Help** | `help` | `-`
 **List person** | `list person`  | `l p`
 **List group** | `list group` | `l g`
