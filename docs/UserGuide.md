@@ -95,32 +95,39 @@ Format: `exit`
 Shows a list of all persons.
 
 Format: `list /people`<br>
-Advanced user Format: `list /p`
+Advanced user Format: `l /p`
 
 #### Listing all groups : `list`
 
 Shows a list of all groups.
 
 Format:  `list /group`<br>
-Advanced user Format: `list /g`
+Advanced user Format: `l /g`
 
 #### Listing all subgroups of group : `list`
 
 Shows a list of subgroups in group specified.
 
 Format: `list /subgroup g:GROUP_NAME`<br>
-Advanced user Format: `list /sg g:GROUP_NAME`
+Advanced user Format: `l /sg g:GROUP_NAME`
 Examples:
 
 * `list /subgroup g:Orbital`
-* `list /sg g:Orbital`
+* `l /sg g:Orbital`
+
+#### Listing all tags : `list`
+
+Shows a list of tags.
+
+Format: `list /tag`<br>
+Advanced user Format: `l /t`
 
 #### Find a person : `find`
 
 Find all the people with the keyword specified. Optionally, group can be specified too.
 
-Format: `list /person n:KEYWORD [g:GROUP_NAME]`<br>
-Advanced user Format:  `find /p n:KEYWORD [g:GROUP_NAME]`
+Format: `find /person n:KEYWORD [g:GROUP_NAME]`<br>
+Advanced user Format:  `f /p n:KEYWORD [g:GROUP_NAME]`
 
 * Find all the person that matches the `KEYWORD`.
 * Filter based on the group if `GROUP_NAME` is specified.
@@ -129,14 +136,14 @@ Advanced user Format:  `find /p n:KEYWORD [g:GROUP_NAME]`
 Examples:
 
 * `find /person n:Elton g:Orbital Team 1`
-* `find /p n:John`
+* `f /p n:John`
 
 #### Find a group : `find`
 
 Find all the groups with the keyword specified.
 
 Format:  `find /group g:KEYWORD`
-Advanced user Format: `find /g g:KEYWORD`
+Advanced user Format: `f /g g:KEYWORD`
 
 * Find all the group that matches the `KEYWORD`.
 * The keyword must not include backslash (`/`) or colon (`:`).
@@ -144,14 +151,14 @@ Advanced user Format: `find /g g:KEYWORD`
 Examples:
 
 * `find /group g:Orbital_Team_1`
-* `find /g g:W08`
+* `f /g g:W08`
 
 #### Find a subgroup: `find`
 
 Find all the subgroups with the group and subgroup name specified.
 
 Format: `find /subgroup sg:KEYWORD g:GROUP_NAME`<br>
-Advanced user Format: `find /sg sg:KEYWORD g:GROUP_NAME`
+Advanced user Format: `f /sg sg:KEYWORD g:GROUP_NAME`
 
 * Find all the subgroups that matches the `KEYWORD` in `GROUP_NAME`
 * The keyword must not include backslash (`/`) or colon (`:`).
@@ -159,7 +166,22 @@ Advanced user Format: `find /sg sg:KEYWORD g:GROUP_NAME`
 Examples:
 
 * `find /subgroup sg:W08 g:CS2103T`
-* `find /subgroup sg:Artemis g:Orbital`
+* `f /sg sg:Artemis g:Orbital`
+
+#### Find a tag: `find`
+
+Find all the tags with the keyword specified.
+
+Format: `find /tag t:KEYWORD`
+Advanced user Format: `f /t t:KEYWORD`
+
+* Find all the tags that matches the `KEYWORD`.
+* The keyword must not include backslash(`/`) or colon(`;`).
+
+Examples:
+
+* `find /tag t:AY2020`
+* `f /t t:Artemis`
 
 ### Working with people
 
@@ -525,9 +547,11 @@ Action | Format | Advanced Format
 **Clear** | `clear` | `-`
 **Exit** | `exit` | `-`
 **Help** | `help` | `-`
-**List person** | `list person`  | `l p`
-**List group** | `list group` | `l g`
+**List person** | `list /person`  | `l /p`
+**List group** | `list /group` | `l /g`
 **List subgroup** | `list /subgroup  g:GROUP_NAME` | `l /sg g:GROUP_NAME`
-**find person** | `find /person PERSON_NAME` | `f /p n:PERSON_NAME`
-**find group** | `find /group GROUP_NAME` | `f /g g:GROUP_NAME`
-**find subgroup** | `find /subgroup or /sg GROUP_NAME` | `f /sg g:GROUP_NAME`
+**List tags** | `list /tags` | `l /t`
+**Find person** | `find /person PERSON_NAME` | `f /p n:PERSON_NAME`
+**Find group** | `find /group GROUP_NAME` | `f /g g:GROUP_NAME`
+**Find subgroup** | `find /subgroup or /sg GROUP_NAME` | `f /sg g:GROUP_NAME`
+**Find tag** | `find /tag t:TAG_NAME` | `f /t t:TAG_NAME`
