@@ -171,98 +171,154 @@ Examples:
 ## Working with people
 The base functionality of Notor is to allow you to mantain notes on people who you mentor. These are the commands you can use with the `person` prefix to manage your contacts.
 
-### Adding a person: `person /create`
+### Adding a person: `person (NAME) /create`
 
 Creates a person.
 
-Format: `person (INDEX) /create n:NAME [p:phone] [e:email] [g:GROUP_NAME]`<br>
-Advanced user Format: `p (INDEX) /c n:NAME [p:phone] [e:email] [g:GROUP_NAME]`
+Format: `person (NAME) /create [p:PHONE] [e:EMAIL] [t:TAG1,TAG2,...] [g:GROUP_INDEX]`<br>
+Advanced user Format: `p (NAME) /c [p:PHONE] [e:EMAIL] [t:TAG1,TAG2,...] [g:GROUP_INDEX]`
 
 * Creates a person with the `NAME`.
 * Optional arguments:
-  * 
-  * `GROUP_NAME`: name of the group to add the user to.
+  * `PHONE`: Phone number of the person.
+  * `EMAIL`: Email of the person.
+  * `TAG1,TAG2..`: Tag(s) that describe the person.
+  * `GROUP_INDEX`: Index of the group in notor to add the person to.
 
 Examples:
 
-* `person /create n:John Lim g:CS2103T`
-* `p /c n:Mary`
+* `person John Lim /create p:91119111 e:notor@notor.com t:Loves Dancing g:1`
+* `p Michael Joe /c p:92229222 e:notor@notor.com t:Loves Singing g:2`
 
-### Adding a person to a group or subgroup: `person /add`
+### Adding a person to a group: `person (INDEX) /add (g:GROUP_NAME)`
 
-Adds a person to a specified group.
+Adds a person at the given index to a specified group.
 
-Format: `person NAME /add g:GROUP_NAME [sg:SUP_GROUP_NAME]`<br>
-Advanced user Format: `p  NAME /a g:GROUP_NAME [sg:SUP_GROUP_NAME]`
+Format: `person (INDEX) /add (g:GROUP_NAME)`<br>
+Advanced user Format: `p (INDEX) /a (g:GROUP_NAME)`
 
-* Adds a person with the NAME to GROUP_NAME.
-* Optional arguments:
-* `SUB_GROUP_NAME`: name of the subgroup to add the user to.
+* Adds a person with the `NAME` to `GROUP_NAME`.
 
 Examples:
 
-* `person John /add Lim g:CS2103T`
-* `p Mary /a g:CS2103T sg:W08`
-* 
-### Deleting a person : `person /delete`
+* `p John /add Lim g:CS2103T`
+* `p Mary /a g:CS2103T`
+
+### Deleting a person : `person (INDEX) /delete`
 
 Deletes an existing person.
 
-Format: `person /delete n:NAME`<br>
-Advanced user Format: `p /d n:NAME`
+Format: `person (INDEX) /delete`<br>
+Advanced user Format: `p (INDEX) /d`
 
-* Deletes an existing person with the `NAME`.
+* Deletes an existing person at the given `INDEX`.
 
 Examples:
 
-* `person /delete n:John Lim `
-* `p /d n:Mary`
+* `person 1 /d `
+* `p 2 /d`
 
-### Editing a person : `person /edit`
+### Editing a person : `person (INDEX) /edit [n:NAME] [p:PHONE] [e:EMAIL]`
 
 Edit an existing person's data.
 
-[comment]: <> (I believe you should be able to edit more than name... Need to edit)
 Format: `person (INDEX) /edit [n:NAME] [p:PHONE] [e:EMAIL]`<br>
-Advanced user Format:`p (INDEX) /e [n:NAME] [p:phone] [e:email]`
+Advanced user Format:`p (INDEX) /e [n:NAME] [p:PHONE] [e:EMAIL]`
 
 * Edits the person at the index `INDEX` and replaces the fields specified with the new parameters.
 * Please specify at least one field to be edited.
 
+* Optional arguments:
+  * `NAME`: Name of the person.
+  * `PHONE`: Phone number of the person.
+  * `EMAIL`: Email of the person.
+
+
 Examples:
+* `person 1 /edit n:John Cena e:notor@notor.com`
+* `p 2 /e n:Little Lamb p:93339333`
 
-* `person John Lim /edit n:John Cena`
-* `p Mary /e n:Little Lamb`
+### Removing a person from group: `person (INDEX) /remove (g:GROUP_NAME)`
 
-### Removing a person from group or subgroup : `person /remove`
+Removes an existing person from a group.
 
-Removes an existing person from a group or subgroup.
-
-Format: `person NAME /remove g:GROUP_NAME [sg:SUB_GROUP_NAME]`<br>
-Advanced user Format:`p NAME /r g:GROUP_NAME [g:SUB_GROUP_NAME]`
+Format: `person (INDEX) /remove (g:GROUP_NAME)`<br>
+Advanced user Format:`p (INDEX) /r (g:GROUP_NAME)`
 
 * Removes an existing person with the `NAME` from a `GROUP_NAME`.
-* Optional Argument:
-    * `SUB_GROUP_NAME`: Removes an existing person with the name `NAME` from a `SUB_GROUP_NAME` in `GROUP_NAME`.
 
 Examples:
+* `person 1 /remove g:CS2103T`
+* `p 2 /r g:CS2103T sg:W08`
 
-* `person John Lim /remove g:CS2103T`
-* `p John Lim /r g:CS2103T sg:W08`
-
-### Taking notes for a person : `person /note`
+### Taking notes for a person : `person (INDEX) /note`
 
 Pops up a note window to take note for an existing person.
 
-Format: `person NAME /note`<br>
-Advanced user Format:`p NAME /n`
+Format: `person (INDEX) /note`<br>
+Advanced user Format:`p (INDEX) /n`
 
 * Pops up a note window for an existing person with the `NAME` to take note.
 
 Examples:
 
-* `person John Lim /note`
-* `p John Lim /n`
+* `person 1 /note`
+* `p 2 /n`
+
+### Clearing notes of a person : `person (INDEX) /clearnote`
+
+Removes note of an existing person.
+
+Format: `person (INDEX) /clearnote`<br>
+Advanced user Format:`p (INDEX) /cn`
+
+* Removes note of an existing person at the given `INDEX`.
+
+Examples:
+
+* `person 1 /clearnote`
+* `p 2 /cn`
+
+### Listing all persons : `person /list`
+
+Lists all persons.
+
+Format: `person /list`<br>
+Advanced user Format:`p /l`
+
+Examples:
+
+* `person /list`
+* `p /l`
+
+### Listing all persons in a group : `person (INDEX) /list`
+
+Lists all persons in a group.
+
+Format: `person (INDEX)/list`<br>
+Advanced user Format:`p (INDEX) /l`
+
+* Lists all persons of a group that is at the given `INDEX` .
+
+Examples:
+
+* `person 1 /list`
+* `p 2 /l`
+
+
+### Finding persons : `person /find (n:QUERY)`
+
+Finds all persons that match your search term.
+
+Format: `person  /find (n:QUERY)`<br>
+Advanced user Format:`p /f (n:QUERY)`
+
+* Finds all persons that match with given `QUERY`.
+
+Examples:
+
+* `person /find n:John`
+* `p 2 /f n:Mary`
 
 ## Working with groups/subgroups
 :warning: **These commands will work only will only work when groups or subgroups are listed.** :warning:
@@ -436,10 +492,11 @@ Action                    | Format                                              
 **Add**                   | `person (INDEX) /add (g:GROUP_NAME) `                                         | `p (INDEX) /a (g:GROUP_NAME)`
 **Remove**                | `person (INDEX) /remove (g:GROUP_NAME) `                                      | `p (INDEX) /r (g:GROUP_NAME)`
 **Note**                  | `person (INDEX) /note`                                                        | `p (INDEX) /n`
+**Clear Note**            | `person (INDEX) /clearnote`                                                   | `p (INDEX) /cn`
 **Tag**                   | `person (INDEX) /tag [t:TAG1,TAG2,...]`                                       | `p (INDEX) /t [t:TAG1,TAG2,...]`
 **Untag**                 | `person (INDEX) /untag [t:TAG1,TAG2,...]`                                     | `p (INDEX) /u [t:TAG1,TAG2,...]`
 **Clear Tags**            | `person (INDEX) /cleartags`                                                   | `p (INDEX) / ct`
-**List Persons**          | `person /list`                                                                | `p /list`
+**List Persons**          | `person /list`                                                                | `p /l`
 **List Persons in Group** | `person [INDEX] /list`                                                        | `p [INDEX] /l`
 **Find**                  | `person /find (n:QUERY)`                                                      | `p /f (n:QUERY)`
 
