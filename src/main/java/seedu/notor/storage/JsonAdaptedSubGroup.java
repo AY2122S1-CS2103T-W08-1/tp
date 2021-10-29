@@ -37,7 +37,7 @@ public class JsonAdaptedSubGroup {
      * Converts a given {@code Person} into this class for Jackson use.
      */
     public JsonAdaptedSubGroup(SubGroup source) {
-        this.name = source.getName();
+        this.name = source.getName().toString();
         this.parent = source.getParent();
         note = source.getNote().value;
         noteDate = source.getNote().getSavedDate();

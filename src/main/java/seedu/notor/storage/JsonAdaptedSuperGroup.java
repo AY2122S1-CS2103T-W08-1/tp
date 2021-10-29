@@ -39,7 +39,7 @@ public class JsonAdaptedSuperGroup {
      * Converts a given {@code Person} into this class for Jackson use.
      */
     public JsonAdaptedSuperGroup(SuperGroup source) {
-        this.name = source.getName();
+        this.name = source.getName().toString();
         subGroups.addAll(source.getSubGroups().asUnmodifiableObservableList().stream()
                 .map(JsonAdaptedSubGroup::new)
                 .collect(Collectors.toList()));

@@ -68,7 +68,7 @@ public class SubGroup extends Group implements Unique<SubGroup> {
 
     @Override
     public Name getName() {
-        return name.toString();
+        return name;
     }
 
     public String getParent() {
@@ -76,7 +76,7 @@ public class SubGroup extends Group implements Unique<SubGroup> {
     }
 
     public void setParent(SuperGroup parent) {
-        this.parent = parent.getName();
+        this.parent = parent.getName().toString();
     }
 
     @Override

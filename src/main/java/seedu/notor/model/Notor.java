@@ -7,6 +7,7 @@ import java.util.List;
 import javafx.collections.ObservableList;
 import seedu.notor.logic.parser.ParserUtil;
 import seedu.notor.logic.parser.exceptions.ParseException;
+import seedu.notor.model.common.Name;
 import seedu.notor.model.common.Note;
 import seedu.notor.model.group.Group;
 import seedu.notor.model.group.SuperGroup;
@@ -268,6 +269,10 @@ public class Notor implements ReadOnlyNotor {
     @Override
     public int hashCode() {
         return persons.hashCode();
+    }
+
+    @Override public Name getName() {
+        return new Name("General Note");
     }
 
     @Override

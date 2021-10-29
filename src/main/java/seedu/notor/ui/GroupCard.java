@@ -50,7 +50,7 @@ public class GroupCard extends UiPart<Region> {
         super(FXML);
         this.group = group;
         id.setText(displayedIndex + ". ");
-        name.setText(group.getName());
+        name.setText(group.getName().toString());
         if (!group.getNote().equals(Note.EMPTY_NOTE)) {
             note.setText(group.getNote().getNoEmptyLineNote());
             noteLastModified.setText(group.getNoteSavedDate());

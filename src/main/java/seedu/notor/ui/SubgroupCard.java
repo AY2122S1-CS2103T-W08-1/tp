@@ -56,7 +56,7 @@ public class SubgroupCard extends UiPart<Region> {
         super(FXML);
         this.subgroup = subgroup;
         id.setText(displayedIndex + ". ");
-        name.setText(subgroup.getName());
+        name.setText(subgroup.getName().toString());
         if (!subgroup.getNote().equals(Note.EMPTY_NOTE)) {
             note.setText(subgroup.getNote().getNoEmptyLineNote());
             noteLastModified.setText(subgroup.getNoteSavedDate());

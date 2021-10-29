@@ -63,8 +63,8 @@ public class SuperGroup extends Group implements Unique<SuperGroup> {
         subGroups = new UniqueList<>();
     }
 
-    public String getName() {
-        return this.name.toString();
+    public Name getName() {
+        return this.name;
     }
 
     /**
@@ -85,7 +85,7 @@ public class SuperGroup extends Group implements Unique<SuperGroup> {
      */
     public void addSubGroup(String subGroup) {
         requireNonNull(subGroup);
-        subGroups.add(new SubGroup(name, tags, getName()));
+        subGroups.add(new SubGroup(name, tags, getName().toString()));
     }
 
     public UniqueList<SubGroup> getSubGroups() {

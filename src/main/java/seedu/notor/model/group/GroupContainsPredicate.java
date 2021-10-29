@@ -23,7 +23,7 @@ public class GroupContainsPredicate implements Predicate<Group> {
     @Override
     public boolean test(Group group) {
         boolean nameHasMatch =
-                group.getName().toLowerCase(Locale.ROOT)
+                group.getName().toString().toLowerCase(Locale.ROOT)
                         .contains(nameQuery.orElse("").toLowerCase(Locale.ROOT));
         return nameHasMatch;
     }

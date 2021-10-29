@@ -46,7 +46,7 @@ public class GroupViewCard extends UiPart<Region> {
     public GroupViewCard(SuperGroup group) {
         super(FXML);
         this.group = group;
-        name.setText(group.getName());
+        name.setText(group.getName().toString());
         if (!group.getNote().equals(Note.EMPTY_NOTE)) {
             note.setText(group.getNote().getNoEmptyLineNote());
             noteLastModified.setText(group.getNoteSavedDate());
