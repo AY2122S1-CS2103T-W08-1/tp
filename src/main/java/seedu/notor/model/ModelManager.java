@@ -271,26 +271,6 @@ public class ModelManager implements Model {
             .asUnmodifiableObservableList());
     }
 
-    /**
-     *  Filter the List with Persons in a Group.
-     * @param i the Index i of the Group.
-     */
-    public void listPersonInSuperGroup(Index i) {
-        isPersonList = true;
-        isSuperGroupList = false;
-        isArchiveView = false;
-        filteredGroups = new FilteredList<>(this.notor.getSuperGroups().get(i.getZeroBased()).getSubGroups()
-            .asUnmodifiableObservableList());
-    }
-
-    public void listPersonInSubGroup(Index i) {
-        isPersonList = true;
-        isSuperGroupList = false;
-        isArchiveView = false;
-//        filteredGroups = new FilteredList<>(this.notor.getSuperGroups().get(i.getZeroBased()).getPersons()
-//        )
-    }
-
     @Override
     public void displayPersonArchive() {
         isPersonList = true;

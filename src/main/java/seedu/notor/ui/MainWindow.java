@@ -50,7 +50,7 @@ public class MainWindow extends UiPart<Stage> {
     // Independent Ui parts residing in this Ui container
     private final HelpWindow helpWindow;
     private ResultDisplay resultDisplay;
-    private ViewPanel viewPane;
+    // private ViewPanel viewPane;
 
 
     @FXML
@@ -147,8 +147,8 @@ public class MainWindow extends UiPart<Stage> {
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        //ViewPanel viewPane = new ViewPanel(logic.getNotor().getNote());
-        viewPanePlaceholder.getChildren().add(viewPane.getRoot());
+//        ViewPanel viewPane = new ViewPanel(logic.getNotor().getNote());
+//        viewPanePlaceholder.getChildren().add(viewPane.getRoot());
     }
 
     /**
