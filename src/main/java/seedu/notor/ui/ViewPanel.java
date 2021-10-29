@@ -4,8 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
-import seedu.notor.ui.UiPart;
-import seedu.notor.model.Notable;
+import seedu.notor.model.common.Note;
 
 /**
  * Viewing panel of object T.
@@ -23,9 +22,8 @@ public class ViewPanel extends UiPart<Region> {
     /**
      * Creates a {@code ViewPanel}.
      */
-     public ViewPanel(Notable notable) {
-        name.setText(notable.getName().toString());
-        note.setText(notable.getName().toString());
-
+     public ViewPanel(Note theNote) {
+        super(FXML);
+        note.setText(theNote.value);
      }
 }
