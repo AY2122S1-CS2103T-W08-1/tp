@@ -13,8 +13,6 @@ public class CommandResult {
 
     private final String feedbackToUser;
 
-    private int index;
-
     /**
      * Help information should be shown to the user.
      */
