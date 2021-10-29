@@ -31,7 +31,6 @@ import seedu.notor.ui.note.GeneralNoteWindow;
 import seedu.notor.ui.note.GroupNoteWindow;
 import seedu.notor.ui.note.NoteWindow;
 import seedu.notor.ui.note.PersonNoteWindow;
-import seedu.notor.ui.view.ViewPanel;
 
 /**
  * The Main Window. Provides the basic application layout containing
@@ -57,8 +56,8 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private StackPane commandBoxPlaceholder;
 
-    //@FXML
-    //private StackPane viewPanePlaceholder;
+    @FXML
+    private StackPane viewPanePlaceholder;
 
     @FXML
     private MenuItem helpMenuItem;
@@ -148,8 +147,8 @@ public class MainWindow extends UiPart<Stage> {
         CommandBox commandBox = new CommandBox(this::executeCommand);
         commandBoxPlaceholder.getChildren().add(commandBox.getRoot());
 
-        ViewPanel viewPane = new ViewPanel();
-        //viewPanePlaceholder.getChildren().add(viewPane.getRoot());
+        //ViewPanel viewPane = new ViewPanel(logic.getNotor().getNote());
+        viewPanePlaceholder.getChildren().add(viewPane.getRoot());
     }
 
     /**

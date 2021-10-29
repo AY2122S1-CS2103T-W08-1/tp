@@ -43,7 +43,7 @@ public class GroupViewCard extends UiPart<Region> {
     /**
      * Creates a {@code SuperGroupCode} with the given {@code SuperGroup} and index to display.
      */
-    public GroupViewCard(SuperGroup group, int displayedIndex) {
+    public GroupViewCard(SuperGroup group) {
         super(FXML);
         this.group = group;
         name.setText(group.getName());

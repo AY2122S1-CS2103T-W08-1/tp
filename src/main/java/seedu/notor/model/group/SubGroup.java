@@ -67,7 +67,7 @@ public class SubGroup extends Group implements Unique<SubGroup> {
     }
 
     @Override
-    public String getName() {
+    public Name getName() {
         return name.toString();
     }
 

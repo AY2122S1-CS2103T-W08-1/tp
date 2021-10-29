@@ -93,7 +93,8 @@ public abstract class Group implements Notable {
         return Objects.hash(name);
     }
 
-    public abstract String getName();
+    @Override
+    public Name getName() { return name;}
 
     public HashMap<String, Person> getPeople() {
         return people;

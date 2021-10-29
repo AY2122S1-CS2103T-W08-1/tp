@@ -51,7 +51,7 @@ public class PersonViewCard extends UiPart<Region> {
     /**
      * Creates a {@code PersonCode} with the given {@code Person} and index to display.
      */
-    public PersonViewCard(Person person, int displayedIndex) {
+    public PersonViewCard(Person person) {
         super(FXML);
         this.person = person;
         name.setText(person.getName().fullName);

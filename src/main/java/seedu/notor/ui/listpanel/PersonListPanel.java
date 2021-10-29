@@ -49,5 +49,4 @@ public class PersonListPanel extends ListPanel<Person> {
             }
         }
     }
-
 }

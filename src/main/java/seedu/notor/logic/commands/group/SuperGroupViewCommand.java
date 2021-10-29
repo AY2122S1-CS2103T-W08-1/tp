@@ -1,4 +1,4 @@
-//package seedu.notor.logic.commands.person;
+//package seedu.notor.logic.commands.group;
 //
 //import seedu.notor.commons.core.index.Index;
 //import seedu.notor.logic.commands.CommandResult;
@@ -13,7 +13,7 @@
 //
 //import static java.util.Objects.requireNonNull;
 //
-//public class PersonViewCommand extends GroupCommand {
+//public class SuperGroupViewCommand extends GroupCommand {
 //    public static final String COMMAND_WORD = "view";
 //    public static final List<String> COMMAND_WORDS = Arrays.asList("view", "v");
 //
@@ -25,12 +25,12 @@
 //            + "Example: "
 //            + GroupCommand.COMMAND_WORD + " /" + COMMAND_WORD;
 //
-//    private final PersonViewExecutor executor;
+//    private final SuperGroupViewExecutor executor;
 //
 //    /**
 //     * Constructor for a PersonListCommand.
 //     */
-//    public PersonViewCommand(Index index) {
+//    public SuperGroupViewCommand(Index index) {
 //        super(null);
 //        this.executor = new SuperGroupViewExecutor(index);
 //    }

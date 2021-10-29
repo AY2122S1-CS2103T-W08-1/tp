@@ -49,7 +49,7 @@ public class SubgroupViewCard extends UiPart<Region> {
     /**
      * Creates a {@code SuperGroupCode} with the given {@code SuperGroup} and index to display.
      */
-    public SubgroupViewCard(SubGroup subgroup, int displayedIndex) {
+    public SubgroupViewCard(SubGroup subgroup) {
         super(FXML);
         this.subgroup = subgroup;
         name.setText(subgroup.getName());

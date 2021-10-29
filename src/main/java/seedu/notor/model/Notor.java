@@ -22,7 +22,6 @@ public class Notor implements ReadOnlyNotor {
     private final UniqueList<Person> persons;
     private final UniqueList<SuperGroup> superGroups;
     private final UniqueList<Person> personArchive;
-
     private Note note;
 
     {

@@ -13,6 +13,8 @@ public class CommandResult {
 
     private final String feedbackToUser;
 
+    private int index;
+
     /**
      * Help information should be shown to the user.
      */
@@ -43,7 +45,6 @@ public class CommandResult {
         this.exit = exit;
         this.notable = notable;
     }
-
 
     /**
      * Constructs a {@code CommandResult} with the specified {@code feedbackToUser},

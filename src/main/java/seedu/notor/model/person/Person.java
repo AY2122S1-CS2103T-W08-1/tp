@@ -89,6 +89,7 @@ public class Person implements Unique<Person>, Notable {
         this.displaySubGroups = subGroups;
     }
 
+    @Override
     public Name getName() {
         return name;
     }

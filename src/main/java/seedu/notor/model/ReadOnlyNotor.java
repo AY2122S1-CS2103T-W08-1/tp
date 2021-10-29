@@ -1,6 +1,7 @@
 package seedu.notor.model;
 
 import javafx.collections.ObservableList;
+import seedu.notor.model.group.Group;
 import seedu.notor.model.group.SuperGroup;
 import seedu.notor.model.person.Person;
 
