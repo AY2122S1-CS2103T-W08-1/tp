@@ -61,6 +61,7 @@ public class NoteWindowTest extends UiTest {
 
         clickOn(COMMAND_BOX_ID).write(NoteCommand.COMMAND_WORD);
         clickOn(COMMAND_BOX_ID).press(KeyCode.ENTER);
+
         TextArea textArea1 = lookup(NOTE_TEXTAREA_ID).query();
         textArea1.setText(TEST_TEXT);
 
