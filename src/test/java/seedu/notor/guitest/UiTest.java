@@ -34,7 +34,7 @@ public class UiTest extends ApplicationTest {
 
     @AfterEach
     public void afterEachTest() throws TimeoutException {
-        FxToolkit.cleanupStages();
+        FxToolkit.hideStage();
         release(new KeyCode[]{});
         release(new MouseButton[]{});
     }
