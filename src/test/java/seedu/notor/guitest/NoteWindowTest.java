@@ -28,7 +28,10 @@ public class NoteWindowTest extends UiTest {
 
     @Test
     public void should_updateNoteWindowTextArea_onAddText() {
-        setTestTextForTextArea();
+        clickOn(COMMAND_BOX_ID).write(NoteCommand.COMMAND_WORD);
+        clickOn(COMMAND_BOX_ID).press(KeyCode.ENTER);
+        TextArea textArea1 = lookup(NOTE_TEXTAREA_ID).query();
+        textArea1.setText(TEST_TEXT);
         verifyThat(NOTE_TEXTAREA_ID, (TextArea textArea) -> textArea.getText().equals(TEST_TEXT));
         MainAppStub.removeTestFile();
     }
@@ -55,7 +58,12 @@ public class NoteWindowTest extends UiTest {
 
     @Test
     public void should_promptConfirmationWindow_onExitNoteWithoutSaving() {
-        setTestTextForTextArea();
+
+        clickOn(COMMAND_BOX_ID).write(NoteCommand.COMMAND_WORD);
+        clickOn(COMMAND_BOX_ID).press(KeyCode.ENTER);
+        TextArea textArea1 = lookup(NOTE_TEXTAREA_ID).query();
+        textArea1.setText(TEST_TEXT);
+
         clickOn(NOTE_TEXTAREA_ID).push((KeyCodeCombination) NoteWindow.EXIT_KEY);
         clickOn("#doNotSaveButton");
         MainAppStub.removeTestFile();

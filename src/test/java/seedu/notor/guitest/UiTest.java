@@ -15,13 +15,13 @@ import javafx.stage.Stage;
 
 public class UiTest extends ApplicationTest {
 
-    @BeforeAll
-    public static void headlessSetUp() {
-        System.setProperty("testfx.robot", "glass");
-        System.setProperty("testfx.headless", "true");
-        System.setProperty("prism.order", "sw");
-        System.setProperty("prism.text", "t2k");
-    }
+//    @BeforeAll
+//    public static void headlessSetUp() {
+//        System.setProperty("testfx.robot", "glass");
+//        System.setProperty("testfx.headless", "true");
+//        System.setProperty("prism.order", "sw");
+//        System.setProperty("prism.text", "t2k");
+//    }
 
     @BeforeEach
     public void setup() throws Exception {
