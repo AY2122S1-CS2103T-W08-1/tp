@@ -13,7 +13,7 @@ import javafx.scene.input.MouseButton;
 import javafx.stage.Stage;
 
 
-public abstract class UiTest extends ApplicationTest {
+public class UiTest extends ApplicationTest {
 
     @BeforeAll
     public static void headlessSetUp() {

@@ -71,6 +71,8 @@ dependencies {
     testRuntimeOnly group: 'org.testfx', name: 'openjfx-monocle', version: 'jdk-11+26'
 }
 
+
+
 shadowJar {
     archiveName = 'notor.jar'
 }
