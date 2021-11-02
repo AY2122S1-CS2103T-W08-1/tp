@@ -5,7 +5,6 @@ import static org.testfx.api.FxAssert.verifyThat;
 import java.util.concurrent.TimeoutException;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.testfx.api.FxToolkit;
@@ -25,11 +24,11 @@ public class UiTest extends ApplicationTest {
     public static final String TEST_TEXT = "hello world 121234~ hello world";
 
 
-    @BeforeAll
-    public static void headlessSetUp() {
-        System.setProperty("testfx.robot", "glass");
-        System.setProperty("testfx.headless", "true");
-    }
+    //    @BeforeAll
+    //    public static void headlessSetUp() {
+    //        System.setProperty("testfx.robot", "glass");
+    //        System.setProperty("testfx.headless", "true");
+    //    }
 
     @BeforeEach
     public void setup() throws Exception {
