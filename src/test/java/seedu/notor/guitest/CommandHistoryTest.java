@@ -28,7 +28,6 @@ public class CommandHistoryTest extends UiTest {
             return commandHistoryText.equals(VALID_LIST_COMMAND);
         });
         MainAppStub.removeTestFile();
-        interact(() -> {});
     }
 
     /**
