@@ -419,7 +419,8 @@ Sometimes, you will want to view all people, groups, subgroups to understand wha
 
 ### List
 
-List can show all persons, groups, subgroups which you have added to Notor. It can also list archived persons: see [Archiving People](#archiving-people).
+List can show all persons, groups, subgroups which you have added to Notor. 
+It can also list archived persons: see [Archiving People](#archiving-people).
 
 #### _Listing all persons_
 
