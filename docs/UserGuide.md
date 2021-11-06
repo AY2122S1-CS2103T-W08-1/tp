@@ -145,6 +145,7 @@ Examples:
 
 * `person John Lim /create p:91119111 e:notor@notor.com t:Loves Dancing g:1`
 * `p Michael Joe /c p:92229222 e:notor@notor.com t:Loves Singing g:2`
+  ![personCreate](images/personCreate.png)
 
 #### _Adding a person to a group_
 
@@ -311,6 +312,8 @@ Archives a single person by the index.
 Format: `person (INDEX) /archive`
 Advanced user Format: `p (INDEX) /ar`
 
+![personArchive](images/personArchive.png)
+
 #### _Archiving All_
 Archives every person displayed in the list panel.
 
@@ -345,6 +348,7 @@ Examples:
 
 * `group Orbital /create` will create a new group called Orbital.
 * `g Orbital /c`
+  ![groupCreate](images/groupCreate.png)
 
 <div markdown="block" class="alert alert-info">
 :warning:
@@ -428,6 +432,7 @@ Lists all persons in the list panel.
 
 Format: `person /list`<br>
 Advanced user Format:`p /l`
+![personList](images/personList.png)
 
 #### _Listing all groups_
 
@@ -435,6 +440,7 @@ Lists all groups in the list panel.
 
 Format:  `group /list`<br>
 Advanced user Format: `g /l`
+![groupList](images/groupList.png)
 
 #### _Listing all persons in a group or subgroup_
 
@@ -472,6 +478,8 @@ Shows the list of archived Persons.
 Format: `person /listarchive`
 Advanced user Format: `p /lar`
 
+![archivedList](images/archivePersonList.png)
+
 ### Find
 
 Find allows you to obtain the results that match with the keyword specified. You can filter in this way on people, groups, and subgroups. In addition, you may add additional parameters to your search, in order to narrow the search further.
@@ -493,6 +501,8 @@ Examples:
 * `person /find n:Alex t:graduated, engineering`
 * `p /f n:Mary`
 * `p /find n:Jo t:Final Year Project`
+
+![personFind](images/personFind.png)
 
 #### _Finding groups or subgroups_
 
