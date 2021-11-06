@@ -13,7 +13,7 @@ Notor is a desktop application for mentors to keep tabs on their mentees, **opti
 If you're new to Notor, hop over to [Quick Start](#quick-start) to install and begin using it. If you already know what you want, use the Table of Contents to find the feature you are looking for, or the [Command Summary](#command-summary) to view all commands available. If you've used Notor for a while and are looking to get the best out of Notor, 'level-up' by reading our [Tips on Using Notor](#tips-on-using-notor).
 
 Some terminology that might help:
-1. **List pane** : The panel located on the right, which is used to display the  list of persons or groups
+1. **List pane** : The panel located on the right, which is used to display the list of persons or groups
 2. **View pane** : The panel on the left, used to view notes, such as general notes
 3. **Note Window**: The pop up window you may use to edit and add notes
 4. **Command Box**: The box on the left pane, underneath the view pane, where you may type commands.
@@ -52,7 +52,7 @@ Some example commands you can try:
 * **`person /list`** : Lists all contacts.
 * **`person 3 /delete`** : Deletes the 3rd contact (contact with index number `3`) shown in the current list.
 * **`person User /create`** : Creates a person named `User`.
-* **`group Orbital /create`** : Creates a group named `Orbital`.
+* **`group ShopeeProject /create`** : Creates a group named `ShopeeProject`.
 * **`person 3 /add g:Orbital`** : Adds the person with index `3` to the group `Orbital`.
 * **`group /list`** : Lists all groups.
 * **`group 1 /note`** : Edits the group note for the group with index number `1`.
@@ -115,7 +115,7 @@ Exits the program and saves your data.
 
 Format: `exit`
 
-####<a name = "exporting-data"></a> _Exporting data_ :
+#### _Exporting data_ :
 
 Exports all the data of Notor into a CSV file. The exported CSV will be located in the same directory as Notor.
 
@@ -298,7 +298,7 @@ Advanced user Format: `p (INDEX) /ct`
 * Please specify at least one tag to be added.
 
 
-###<a name = "archiving-people"></a> Archiving People
+### Archiving People
 Archiving people allows you to keep your Notor clean, without losing your information. You can use this in conjunction with the [Export](#exporting-data) command to make sure your data is safe. You can restore archived mentees at any time.
 
 #### _Archiving a person_ :
@@ -347,9 +347,9 @@ Examples:
 * `g Orbital /c`
 
 <div markdown="block" class="alert alert-info">
-:warning:
+:warning: 
 **Only the group create command can be used at other views.
-The rest of group commands below will work only when groups or subgroups are listed.**
+The rest of group commands below will work only when groups or subgroups are listed.** 
 :warning:
 </div>
 
@@ -383,9 +383,9 @@ Examples :
 * `g 1 /create n:Artemis`
 
 
-#### _Adding notes to a group or subgroup_ :
+#### _Adding notes to a group_ :
 
-Adds notes on a group or subgroup and saves the time when the note is added.
+Adds notes on a group and saves the time when the note is added.
 
 Format: `group (INDEX) /note`<br>
 Advanced user Format: `group (INDEX) /n`
@@ -399,9 +399,9 @@ Examples :
 * `group 1 /note` will prompt a popup window where the user can edit the notes for group at index 1.
 * `g 1 /n`
 
-#### _Clearing notes of a group or subgroup_ :
+#### _Clearing notes of a group_ :
 
-Removes note of an existing group or subgroup.
+Removes note of an existing group.
 
 Format: `group (INDEX) /clearnote`<br>
 Advanced user Format:`g (INDEX) /cn`
@@ -415,11 +415,11 @@ Examples:
 
 ## Filtering with Notor
 
-Sometimes, you will want to view all people, groups, subgroups to understand what you have saved in your Notor. At other times, you will want to find those which fit into certain parameters. Here are the ways to view a subset of your data.
+Sometimes, you will want to view all people, groups, subgroups, or tags to understand what you have saved in your Notor. At other times, you will want to find those which fit into certain parameters. Here are the ways to view a subset of your data.
 
 ### List
 
-List can show all persons, groups, subgroups which you have added to Notor. It can also list archived persons: see [Archiving People](#archiving-people).
+List can show all persons, groups, subgroups, or tags which you have added to Notor. It can also list archived persons: see [Archiving People](#Archiving People).
 
 #### _Listing all persons_ :
 
@@ -448,8 +448,8 @@ Advanced user Format:`p (INDEX) /l`
 
 Examples:
 
-* `person 1 /list`
-* `p 2 /l`
+* `group 1 /list`
+* `g 2 /l`
 
 #### _Listing all subgroups in a group_ :
 
@@ -480,7 +480,7 @@ Advanced user Format:`p /f [n:NAME_QUERY] [t:TAG1, TAG2...]`
 * Finds all persons that match with given `NAME_QUERY`, or are tagged with the tags specified.
 * The query for the name will match if the string exists within the name, regardless of case: `jo` will match `John` and `joanne`.
 * Tags must be spelled exactly. You may specify more than one tag
-* While the parameters have been marked optional, you must specify at least one of the parameters if you want to filter the results.
+* While the parameters have been marked optional, you should specify at least one parameter if you want to filter the results.
 
 Examples:
 
@@ -583,7 +583,7 @@ Action                    | Format                                              
 **Untag**                 | `person (INDEX) /untag [t:TAG1,TAG2,...]`                                     | `p (INDEX) /ut [t:TAG1,TAG2,...]`
 **Clear Tags**            | `person (INDEX) /cleartags`                                                   | `p (INDEX) / ct`
 **List Persons**          | `person /list`                                                                | `p /l`
-**List Persons in Group or SubGroup** | `person [INDEX] /list`                                            | `p [INDEX] /l`
+**List Persons in Group** | `person [INDEX] /list`                                                        | `p [INDEX] /l`
 **Find**                  | `person /find (n:QUERY)`                                                      | `p /f (n:QUERY)`
 **Archive**               | `person (INDEX) /archive`                                                     | `p (INDEX) /ar`
 **Archive All**           | `person /archive`                                                             | `p /ar`
