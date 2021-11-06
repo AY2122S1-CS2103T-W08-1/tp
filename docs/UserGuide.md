@@ -13,15 +13,13 @@ Notor is a desktop application for mentors to keep tabs on their mentees, **opti
 If you're new to Notor, hop over to [Quick Start](#quick-start) to install and begin using it. If you already know what you want, use the Table of Contents to find the feature you are looking for, or the [Command Summary](#command-summary) to view all commands available. If you've used Notor for a while and are looking to get the best out of Notor, 'level-up' by reading our [Tips on Using Notor](#tips-on-using-notor).
 
 Some terminology that might help:
-1. **List pane** : The panel located on the right, which is used to display the list of persons or groups
+1. **List pane** : The panel located on the right, which is used to display the  list of persons or groups
 2. **View pane** : The panel on the left, used to view notes, such as general notes
 3. **Note Window**: The pop up window you may use to edit and add notes
 4. **Command Box**: The box on the left pane, underneath the view pane, where you may type commands.
 
 <div markdown="block" class="alert alert-info">
 This block is used to highlight information you should pay attention to
-
-**information_source: Used when the following is information**<br>
 </div>
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
@@ -34,7 +32,8 @@ Used to highlight dangers.
 
 --------------------------------------------------------------------------------------------------------------------
 
-##<a name = "quick-start"></a> Quick Start
+<a name = "quick-start"></a>
+## Quick Start
 ### 1. Setup
 Ensure you have Java `11` or above installed in your computer. You can install Java `11` from [here](https://www.oracle.com/in/java/technologies/javase/jdk11-archive-downloads.html).
 ### 2. Installing the project
@@ -52,7 +51,7 @@ Some example commands you can try:
 * **`person /list`** : Lists all contacts.
 * **`person 3 /delete`** : Deletes the 3rd contact (contact with index number `3`) shown in the current list.
 * **`person User /create`** : Creates a person named `User`.
-* **`group ShopeeProject /create`** : Creates a group named `ShopeeProject`.
+* **`group Orbital /create`** : Creates a group named `Orbital`.
 * **`person 3 /add g:Orbital`** : Adds the person with index `3` to the group `Orbital`.
 * **`group /list`** : Lists all groups.
 * **`group 1 /note`** : Edits the group note for the group with index number `1`.
@@ -64,12 +63,13 @@ Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
 
-##<a name = "features"></a> Command Breakdown
+<a name = "features"></a>
+## Command Breakdown
 Here is a detailed breakdown of all the commands Notor has available. All the commands have a shortened command format, referred to interchangeably as 'advanced format' and 'short format'.
 
 <div markdown="block" class="alert alert-info">
 
-**information_source: Notes about the command format:**<br>
+**Notes about the command format:**<br>
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `person /create n:NAME`, `NAME` is a parameter which can be used as `/create n:John Doe`.
 * Round brackets `()` refer to COMPULSORY arguments.<br>
@@ -89,7 +89,7 @@ Here is a detailed breakdown of all the commands Notor has available. All the co
 
 ### General Commands
 
-#### _Viewing help_ :
+#### _Viewing help_
 
 Shows a message explaining how to access the help page.
 
@@ -101,7 +101,7 @@ If you type in a command with no arguments and the command requires arguments, t
 
 Format: `help`
 
-#### _Clearing all entries_ :
+#### _Clearing all entries_
 
 Clears all entries from Notor. Be warned; data will be deleted and **will not be saved**. The intended use of this
  command is to clear the dummy starting data, but you can also use it to reset your Notor from within the program.
@@ -109,13 +109,14 @@ Clears all entries from Notor. Be warned; data will be deleted and **will not be
 Format: `clear`
 * Take care not to confuse this command with the more specific`/clearnote` command.
 
-#### _Exiting the program_ :
+#### _Exiting the program_
 
 Exits the program and saves your data.
 
 Format: `exit`
 
-#### _Exporting data_ :
+<a name = "exporting-data"></a> 
+####_Exporting data_
 
 Exports all the data of Notor into a CSV file. The exported CSV will be located in the same directory as Notor.
 
@@ -124,7 +125,7 @@ Format: `export`
 ### Working with people
 The base functionality of Notor is to allow you to maintain notes on people who you mentor. These are the commands you can use with the `person` prefix to manage your contacts.
 
-#### _Creating a person_ :
+#### _Creating a person_
 
 Creates a person.
 
@@ -143,7 +144,7 @@ Examples:
 * `person John Lim /create p:91119111 e:notor@notor.com t:Loves Dancing g:1`
 * `p Michael Joe /c p:92229222 e:notor@notor.com t:Loves Singing g:2`
 
-#### _Adding a person to a group_ :
+#### _Adding a person to a group_
 
 Adds a person at the given index to a specified group.
 
@@ -157,7 +158,7 @@ Examples:
 * `person 1 /add g:Orbital`
 * `p 2 /a g:Orbital`
 
-#### _Adding a person to a subgroup_ :
+#### _Adding a person to a subgroup_
 
 Adds a person at the given index to a specified subgroup of group.
 
@@ -170,7 +171,7 @@ Examples:
 * `person 1 /add g:Orbital sg:Artemis`
 * `p 2 /a g:Orbital sg:Artemis`
 
-#### _Deleting a person_ :
+#### _Deleting a person_
 
 Deletes an existing person.
 
@@ -184,7 +185,7 @@ Examples:
 * `person 1 /delete `
 * `p 2 /d`
 
-#### _Editing a person_ :
+#### _Editing a person_
 
 Edits an existing person's data.
 
@@ -204,7 +205,7 @@ Examples:
 * `person 1 /edit n:John Cena e:notor@notor.com`
 * `p 2 /e n:Little Lamb p:93339333`
 
-#### _Removing a person from group_ :
+#### _Removing a person from group_
 
 Removes an existing person from a group.
 
@@ -217,7 +218,7 @@ Examples:
 * `person 1 /remove g:Orbital`
 * `p 2 /r g:Orbital`
 
-#### _Removing a person from subgroup_ :
+#### _Removing a person from subgroup_
 
 Removes an existing person from a subgroup.
 
@@ -230,7 +231,7 @@ Examples:
 * `person 1 /remove g:Orbital sg:GroupA`
 * `p 1 /r g:Orbital sg:GroupA`
 
-#### _Taking notes for a person_ :
+#### _Taking notes for a person_
 
 Pops up a note window to take note for an existing person.
 
@@ -244,7 +245,7 @@ Examples:
 * `person 1 /note`
 * `p 2 /n`
 
-#### _Clearing notes of a person_ :
+#### _Clearing notes of a person_
 
 Removes note of an existing person.
 
@@ -258,7 +259,7 @@ Examples:
 * `person 1 /clearnote`
 * `p 2 /cn`
 
-#### _Tagging a person_ :
+#### _Tagging a person_
 
 Tags an existing person.
 
@@ -273,7 +274,7 @@ Examples:
 * `person 1 /tag t:friends,family` will tag person with index `1` with `friends` and `family`.
 * `p 2 /t t:friday`
 
-#### _Untagging a person_ :
+#### _Untagging a person_
 
 Removes tag(s) from an existing person.
 
@@ -287,7 +288,7 @@ Advanced user Format: `p (INDEX) /ut [t:TAG1,TAG2,...]`
 * `person 1 /untag t:friends,family` will untag the person with index `1` with `friends` and `family`.
 * `p 2 /t ut:friday`
 
-#### _Clearing tags from a person_ :
+#### _Clearing tags from a person_
 
 Clears all the tags from an existing person.
 
@@ -298,28 +299,23 @@ Advanced user Format: `p (INDEX) /ct`
 * Please specify at least one tag to be added.
 
 
+<a name = "archiving-people"></a>
 ### Archiving People
 Archiving people allows you to keep your Notor clean, without losing your information. You can use this in conjunction with the [Export](#exporting-data) command to make sure your data is safe. You can restore archived mentees at any time.
 
-#### _Archiving a person_ :
+#### _Archiving a person_
 Archives a single person by the index.
 
 Format: `person (INDEX) /archive`
 Advanced user Format: `p (INDEX) /ar`
 
-#### _Archiving All_ :
+#### _Archiving All_
 Archives every person displayed in the list panel.
 
 Format: `person /archive`
 Advanced user Format: `p /ar`
 
-#### _Listing Archived Persons_ :
-Shows the list of archived Persons.
-
-Format: `person /listarchive`
-Advanced user Format: `p /lar`
-
-#### _Unarchiving_ :
+#### _Unarchiving_
 Returns the archived person to your regular person list in Notor.
 
 Format: `person (INDEX) /unarchive`
@@ -328,9 +324,10 @@ Advanced user Format:`p (INDEX) /uar`
 * You must be on the list of archived persons in order to use this command, as it takes the index as a compulsory parameter
 
 ### Working with groups/subgroups
+You can also create a group to organize people based on their common traits. In addition to groups, you can also create a subgroup
+of a group to organize people based on a more specific category.
 
-
-#### _Creating a group_ :
+#### _Creating a group_
 
 Creates a group.
 
@@ -347,13 +344,13 @@ Examples:
 * `g Orbital /c`
 
 <div markdown="block" class="alert alert-info">
-:warning: 
+:warning:
 **Only the group create command can be used at other views.
-The rest of group commands below will work only when groups or subgroups are listed.** 
+The rest of group commands below will work only when groups or subgroups are listed.**
 :warning:
 </div>
 
-#### _Deleting a group_ :
+#### _Deleting a group_
 
 Deletes an existing group.
 
@@ -367,7 +364,7 @@ Examples :
 * `group 1 /delete` will delete the group at index 1.
 * `g 1 /d`
 
-#### _Creating a subgroup_ :
+#### _Creating a subgroup_
 Creates a new subgroup. **This command only works when group are listed and not when subgroups are listed.**
 
 Format: `group (INDEX) /create n:SUBGROUP_NAME`<br>
@@ -383,9 +380,9 @@ Examples :
 * `g 1 /create n:Artemis`
 
 
-#### _Adding notes to a group_ :
+#### _Adding notes to a group or subgroup_
 
-Adds notes on a group and saves the time when the note is added.
+Adds notes on a group or subgroup and saves the time when the note is added.
 
 Format: `group (INDEX) /note`<br>
 Advanced user Format: `group (INDEX) /n`
@@ -399,9 +396,9 @@ Examples :
 * `group 1 /note` will prompt a popup window where the user can edit the notes for group at index 1.
 * `g 1 /n`
 
-#### _Clearing notes of a group_ :
+#### _Clearing notes of a group or subgroup_
 
-Removes note of an existing group.
+Removes note of an existing group or subgroup.
 
 Format: `group (INDEX) /clearnote`<br>
 Advanced user Format:`g (INDEX) /cn`
@@ -415,27 +412,27 @@ Examples:
 
 ## Filtering with Notor
 
-Sometimes, you will want to view all people, groups, subgroups, or tags to understand what you have saved in your Notor. At other times, you will want to find those which fit into certain parameters. Here are the ways to view a subset of your data.
+Sometimes, you will want to view all people, groups, subgroups to understand what you have saved in your Notor. At other times, you will want to find those which fit into certain parameters. Here are the ways to view a subset of your data.
 
 ### List
 
-List can show all persons, groups, subgroups, or tags which you have added to Notor. It can also list archived persons: see [Archiving People](#Archiving People).
+List can show all persons, groups, subgroups which you have added to Notor. It can also list archived persons: see [Archiving People](#archiving-people).
 
-#### _Listing all persons_ :
+#### _Listing all persons_
 
 Lists all persons in the list panel.
 
 Format: `person /list`<br>
 Advanced user Format:`p /l`
 
-#### _Listing all groups_ :
+#### _Listing all groups_
 
 Lists all groups in the list panel.
 
 Format:  `group /list`<br>
 Advanced user Format: `g /l`
 
-#### _Listing all persons in a group or subgroup_ :
+#### _Listing all persons in a group or subgroup_
 
 Lists all persons in that group or subgroup.<br>
 Use after you have listed out all groups or subgroups (so you can select the index).<br>
@@ -448,10 +445,10 @@ Advanced user Format:`p (INDEX) /l`
 
 Examples:
 
-* `group 1 /list`
-* `g 2 /l`
+* `person 1 /list`
+* `p 2 /l`
 
-#### _Listing all subgroups in a group_ :
+#### _Listing all subgroups in a group_
 
 Lists all the subgroups within a group. Use after you have listed out all groups (so you can select the index)
 
@@ -465,12 +462,17 @@ Examples:
 * `group 3 /list`
 * `g 2 /l`
 
+#### _Listing Archived Persons_
+Shows the list of archived Persons.
+
+Format: `person /listarchive`
+Advanced user Format: `p /lar`
 
 ### Find
 
 Find allows you to obtain the results that match with the keyword specified. You can filter in this way on people, groups, and subgroups. In addition, you may add additional parameters to your search, in order to narrow the search further.
 
-#### _Finding persons_ :
+#### _Finding persons_
 
 Finds all persons that match your search term. You may search for substrings within a persons name, or for tags the user must be tagged with. If you specify multiple search terms, only those people which match ALL criteria will be returned.
 
@@ -480,7 +482,7 @@ Advanced user Format:`p /f [n:NAME_QUERY] [t:TAG1, TAG2...]`
 * Finds all persons that match with given `NAME_QUERY`, or are tagged with the tags specified.
 * The query for the name will match if the string exists within the name, regardless of case: `jo` will match `John` and `joanne`.
 * Tags must be spelled exactly. You may specify more than one tag
-* While the parameters have been marked optional, you should specify at least one parameter if you want to filter the results.
+* While the parameters have been marked optional, you must specify at least one of the parameters if you want to filter the results.
 
 Examples:
 
@@ -488,7 +490,7 @@ Examples:
 * `p /f n:Mary`
 * `p /find n:Jo t:Final Year Project`
 
-#### _Finding groups or subgroups_ :
+#### _Finding groups or subgroups_
 
 Finds all the groups with the keyword specified. This will search for the keyword within the group's name.
 Only works when group/s are shown in the list panel.
@@ -523,7 +525,8 @@ If your changes to the data file makes its format invalid, Notor will discard al
 
 --------------------------------------------------------------------------------------------------------------------
 
-##<a name = "tips-on-using-notor"></a> Tips on Using Notor
+<a name = "tips-on-using-notor"></a> 
+## Tips on Using Notor
 ### Keeping Track of Successfully Executed Command History
 Notor keeps tracks of successfully executed commands in the current instance,  allowing you to navigate through with Up arrow key starting from the most recent command.
 Users can also use the Down arrow key to navigate back to the more recent command when they are navigating with Up arrow key.
@@ -534,10 +537,6 @@ Notor has keyboard shortcuts to give you added convenience and allow you to cont
 **In Pop-Up Windows**
 Navigate the buttons using the arrow keys. On Windows and Linux, select the button by pressing enter; on MacOS, press space.
 
-**Note**:
-- **TimeStamp** shortcut key types the current date and time in Note Window in this format `E, MMM dd yyyy HH:mm"`.
-- Example: `Fri., Oct. 22 2021 00:07`
-
 Shortcut Key            | Linux/Window                                   | MacOS
 ------------------------|------------------------------------------------|---------------------------------------
 **TimeStamp**           | `Ctrl + T`                                     | `Cmd + T`
@@ -545,26 +544,21 @@ Shortcut Key            | Linux/Window                                   | MacOS
 **Quit without Saving** | `Ctrl + W`                                     | `Cmd + W`
 **Save and Quit**       | `Ctrl + Q`                                     | `Cmd + Q`
 
+<div markdown="block" class="alert alert-info">
+**Notes on Timestamp:**<br>
+- **TimeStamp** shortcut key types the current date and time in Note Window in this format `E, MMM dd yyyy HH:mm"`.
+- Example: `Fri., Oct. 22 2021 00:07`
+</div>
 
-##<a name = "command-summary"></a> Command Summary
+<a name = "command-summary"></a> 
+## Command Summary
+<div markdown="block" class="alert alert-info">
 Round brackets `()` refer to COMPULSORY arguments.
 Square brackets `[]` refer to optional arguments.<p>
+</div>
 *TODO: Make command action words below link to their entries above.*
 
 ### Person
-**Note**:
-* For the **Create** and **List** commands, if you want to automatically add them to a group, please use the **List** command to make sure the `Group` you want to
-  use the command on is displayed before using them via `GROUP_INDEX`.
-* For the **Add** and **Remove** commands, please make sure that the `GROUP_NAME` is typed exactly as how it is spelt on
-  the card.
-* For the **List** commands, to view list of persons in a particular subgroup, you should first use **List** command to list out all the subgroups in a `Group` you want to view,
-  then list out the persons inside that subgroup by **List** command with the `GROUP_INDEX` you want to list out.
-
-## FAQ
-
-**Q**: How do I transfer my data to another Computer?<br>
-**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
-the data of your previous Notor home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -583,12 +577,24 @@ Action                    | Format                                              
 **Untag**                 | `person (INDEX) /untag [t:TAG1,TAG2,...]`                                     | `p (INDEX) /ut [t:TAG1,TAG2,...]`
 **Clear Tags**            | `person (INDEX) /cleartags`                                                   | `p (INDEX) / ct`
 **List Persons**          | `person /list`                                                                | `p /l`
-**List Persons in Group** | `person [INDEX] /list`                                                        | `p [INDEX] /l`
+**List Persons in Group or SubGroup** | `person [INDEX] /list`                                            | `p [INDEX] /l`
 **Find**                  | `person /find (n:QUERY)`                                                      | `p /f (n:QUERY)`
 **Archive**               | `person (INDEX) /archive`                                                     | `p (INDEX) /ar`
 **Archive All**           | `person /archive`                                                             | `p /ar`
 **List Archived Persons**       | `person /listarchive`                                                           | `p /lar`
 **Unarchive**             | `person (INDEX) /unarchive`                                                   | `p (INDEX) /uar`
+
+<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+* For the **Add** and **Remove** commands, please make sure that the `GROUP_NAME` is typed exactly as how it is spelt on
+  the card.
+</div>
+
+<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+* For the **Create** and **List** commands, if you want to automatically add them to a group, please use the **List** command to make sure the `Group` you want to
+  use the command on is displayed before using them via `GROUP_INDEX`.
+* For the **List** commands, to view list of persons in a particular subgroup, you should first use **List** command to list out all the subgroups in a `Group` you want to view,
+  then list out the persons inside that subgroup by **List** command with the `GROUP_INDEX` you want to list out.
+</div>
 
 ### Group
 
@@ -618,3 +624,9 @@ Action     | Format   | Short Format
 **Exit**   | `exit`   | `e`
 **Clear**  | `clear`  | `c`
 **Export** | `export` | `exp`
+
+## FAQ
+
+**Q**: How do I transfer my data to another Computer?<br>
+**A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains
+the data of your previous Notor home folder.
