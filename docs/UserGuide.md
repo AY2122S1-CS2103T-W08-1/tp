@@ -87,6 +87,7 @@ Here is a detailed breakdown of all the commands Notor has available. All the co
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 </div>
 
+<a name = "general"></a>
 ### General Commands
 
 #### _Viewing help_
@@ -122,6 +123,7 @@ Exports all the data of Notor into a CSV file. The exported CSV will be located 
 
 Format: `export`
 
+<a name = "person"></a>
 ### Working with people
 The base functionality of Notor is to allow you to maintain notes on people who you mentor. These are the commands you can use with the `person` prefix to manage your contacts.
 
@@ -323,6 +325,7 @@ Advanced user Format:`p (INDEX) /uar`
 
 * You must be on the list of archived persons in order to use this command, as it takes the index as a compulsory parameter
 
+<a name = "group"></a>
 ### Working with groups/subgroups
 You can also create a group to organize people based on their common traits. In addition to groups, you can also create a subgroup
 of a group to organize people based on a more specific category.
@@ -556,9 +559,9 @@ Shortcut Key            | Linux/Window                                   | MacOS
 Round brackets `()` refer to COMPULSORY arguments.
 Square brackets `[]` refer to optional arguments.<p>
 </div>
-*TODO: Make command action words below link to their entries above.*
 
 ### Person
+Refer to the details of Person commands [here](#person).
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -597,6 +600,7 @@ Action                    | Format                                              
 </div>
 
 ### Group
+Refer to the details of the group commands [here](#group).
 
 Action                 | Format                                         | Short Format
 -----------------------|------------------------------------------------|---------------------------------------
@@ -617,6 +621,7 @@ for the **List** command, the `INDEX` argument can be either a `Group` or a `Per
 </div>
 
 ### General
+Refer to the details of the general commands [here](#general).
 
 Action     | Format   | Short Format
 -----------|----------|----------
