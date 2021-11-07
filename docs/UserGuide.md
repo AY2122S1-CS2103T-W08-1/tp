@@ -22,11 +22,11 @@ Some terminology that might help:
 This block is used to highlight information you should pay attention to
 </div>
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+<div markdown="span" class="alert alert-primary">:bulb: <strong>Tip:</strong>
 Used to highlight tips.
 </div>
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+<div markdown="span" class="alert alert-warning">:exclamation: <strong>Caution:</strong>
 Used to highlight dangers.
 </div>
 
@@ -87,14 +87,14 @@ Here is a detailed breakdown of all the commands Notor has available. All the co
   e.g. if the command specifies `help 123`, it will be interpreted as `help`.
 </div>
 
-<a name = "general-command"></a>
+<a name = "general"></a>
 ### General Commands
 
 #### _Viewing help_
 
 Shows a message explaining how to access the help page.
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
+<div markdown="span" class="alert alert-primary">:bulb: <strong>Tip:</strong>
 If you type in a command with no arguments and the command requires arguments, this command will display a prompt for the arguments which should be given.
 </div>
 
@@ -117,7 +117,7 @@ Exits the program and saves your data.
 Format: `exit`
 
 <a name = "exporting-data"></a> 
-####_Exporting data_
+#### _Exporting data_
 
 Exports all the data of Notor into a CSV file. The exported CSV will be located in the same directory as Notor.
 
@@ -462,7 +462,9 @@ Examples:
 
 Lists all the subgroups within a group. Use after you have listed out all groups (so you can select the index)
 
-* Do not confuse this with the list all persons command, whose first command word is `person`
+<div markdown="span" class="alert alert-warning">:exclamation: <strong>Caution:</strong>
+Do not confuse this with the list all persons command, whose first command word is <code>person</code>.
+</div>
 
 Format: `group (INDEX) /list`<br>
 Advanced user Format: `g (INDEX) /l`
@@ -533,7 +535,7 @@ Notor data are saved in the hard disk automatically after any command that chang
 Notor data are saved as a JSON file `[JAR file location]/data/Notor.json`. Advanced users are welcome to update data
 directly by editing that data file.
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
+<div markdown="span" class="alert alert-warning">:exclamation: <strong>Caution:</strong>
 If your changes to the data file makes its format invalid, Notor will discard all data and start with an empty data file at the next run.
 </div>
 
@@ -559,8 +561,8 @@ Shortcut Key            | Linux/Window                                   | MacOS
 **Save and Quit**       | `Ctrl + Q`                                     | `Cmd + Q`
 
 <div markdown="block" class="alert alert-info">
-**Notes on Timestamp:**<br>
-- **TimeStamp** shortcut key types the current date and time in Note Window in this format `E, MMM dd yyyy HH:mm"`.
+<strong>Notes on Timestamp:</strong><br>
+- <strong>Timestamp: </strong> shortcut key types the current date and time in Note Window in this format <code>E, MMM dd yyyy HH:mm"</code>. <br>
 - Example: `Fri., Oct. 22 2021 00:07`
 </div>
 
@@ -598,16 +600,20 @@ Action                    | Format                                              
 **List Archived Persons**       | `person /listarchive`                                                           | `p /lar`
 **Unarchive**             | `person (INDEX) /unarchive`                                                   | `p (INDEX) /uar`
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-* For the **Add** and **Remove** commands, please make sure that the `GROUP_NAME` is typed exactly as how it is spelt on
-  the card.
+<div markdown="span" class="alert alert-warning">:exclamation: <b>Caution:</b>
+<ul>
+<li>For the <b>Add</b> and <b>Remove</b> commands, please make sure that the <code>GROUP_NAME</code> is typed exactly as how it is spelt on
+  the card.</li>
+</ul>
 </div>
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-* For the **Create** and **List** commands, if you want to automatically add them to a group, please use the **List** command to make sure the `Group` you want to
-  use the command on is displayed before using them via `GROUP_INDEX`.
-* For the **List** commands, to view list of persons in a particular subgroup, you should first use **List** command to list out all the subgroups in a `Group` you want to view,
-  then list out the persons inside that subgroup by **List** command with the `GROUP_INDEX` you want to list out.
+<div markdown="span" class="alert alert-primary">:bulb: <strong>Tip:</strong>
+<ul>
+<li> For the <strong>Create</strong> and <strong>List</strong> commands, if you want to automatically add them to a group, please use the <b>List</b> command to make sure the <code>Group</code> you want to
+  use the command on is displayed before using them via <code>GROUP_INDEX</code>.</li>
+<li> For the <b>List</b> commands, to view list of persons in a particular subgroup, you should first use <b>List</b> command to list out all the subgroups in a Group you want to view,
+  then list out the persons inside that subgroup by <b>List</b> command with the <code>GROUP_INDEX</code> you want to list out. </li>
+</ul>
 </div>
 
 ### Group
@@ -623,16 +629,17 @@ Action                 | Format                                         | Short 
 **List Out Subgroups** | `group (INDEX) /list`                          | `g (INDEX) /l`
 **Find**               | `group /find (n:QUERY)`                        | `g /f (n:QUERY)`
 
-<div markdown="span" class="alert alert-warning">:exclamation: **Caution:**
-Before using the group actions, remember to use `g /list` or `g /find` to change the list display so that you can access the indexes of the group
+<div markdown="span" class="alert alert-warning">:exclamation: <strong>Caution:</strong>
+Before using the group actions, remember to use <code>g /list</code> or <code>g /find</code> to change the list display so that you can access the indexes of the group.
 </div>
 
-<div markdown="span" class="alert alert-primary">:bulb: **Tip:**
-for the **List** command, the `INDEX` argument can be either a `Group` or a `Person`, depending on what is in the list display. Change the `person /list` or `group /list`.
+<div markdown="span" class="alert alert-primary">:bulb: <strong>Tip:</strong>
+for the <b>List</b> command, the `INDEX` argument can be either a <code>Group</code> or a <code>Person</code>, depending on what is in the list display. 
+Change the <code>person /list</code> or <code>group /list</code>.
 </div>
 
 ### General
-Refer to the details of the general commands [here](#general-command).
+Refer to the details of the general commands [here](#general).
 
 Action     | Format   | Short Format
 -----------|----------|----------
