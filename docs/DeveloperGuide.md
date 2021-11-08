@@ -210,10 +210,53 @@ for `CommandHistory` when using up arrow key  is as follows.
 ![CommandHistoryActivityDiagram](images/CommandHistoryActivityDiagram.png)
 
 
+### \[Proposed\] View Pane
 
-### \[Proposed\] Data archiving
+* Future implementations would include `ViewPane`, a pane to view data of a specific `Person`,
+`Group`, and `Subgroup` in detail, as well as to view the general note. In addition, a `View` command
+would be implemented for `Person`, `Group`, `Subgroup`, and `Note` to change the view of the `ViewPane` accordingly. 
+* Changes on the implementation would include replacing the current `GeneralNote` class
+with `ViewPane` class, which can contain a `PersonViewCard`, `GroupViewCard`, `SubgroupViewCard`, or `GeneralNote`, all of which
+  implements `ViewCard` interface.
+* The proposed class diagram for the `ViewPane` is as follows.
+![ViewPaneClassDiagram](images/viewPaneClassDiagram.png)
+  
+#### Breakdown of ViewPane
 
-_{Explain here how the data archiving feature will be implemented}_
+Here are the breakdowns of the proposed implementations for `PersonViewCard`, `GroupViewCard`, and `SubgroupViewCard`:
+* `PersonViewCard` would contain the following:
+  * Name, phone, and Email of the `Person`,
+  * Tags of the `Person`, and
+  * Note of the `Person`,
+  * The groups and subgroups that the `Person` is currently in.
+* `GroupViewCard` would contain the following:
+    * `SuperGroup` name,
+    * A truncated list of people inside the `SuperGroup`,
+    * A truncated list of subgroups inside the `SuperGroup`, 
+    * The number of people and the number of subgroup inside the `SuperGroup`, and
+    * Note of the `SuperGroup`.
+    
+* `SubgroupViewCard` would contain the following:
+    * `SubGroup` name,
+    * A truncated list of people inside the `SubGroup`,
+    * The parent group of the `SubGroup`,
+    * The number of people inside the `SubGroup`,
+    * Note of the `SubGroup`, and
+    * Note of the parent group of the `SubGroup`.
+
+#### Breakdown of View Command
+
+The intended functionalities of `ViewCommand` is as follows:
+* `ViewCommand` would be implemented by `PersonViewCommand`, `GroupViewCommand`, `SubgroupViewCommand`
+    , and `GeneralNote`.
+* `PersonViewCommand` would modify the `ViewPane` to contain `PersonViewCard` of a `Person`.
+* `GroupViewCommand` would modify the `ViewPane` to contain `GroupViewCard` of a `SuperGroup`.
+* `SubgroupViewCommand` would modify the `ViewPane` to contain `SubgroupViewCard` of a `SubGroup`.
+* `GeneralNote` would modify the `ViewPane` to show the general notes.
+
+#### Example of View Command Workflow, using the Person View Command
+To illustrate how the `View` command works, the activity diagram for `PersonViewCommand` is as follows.
+![PersonViewCommandActivityDiagram](images/PersonViewCommand.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -399,6 +442,16 @@ Precondition: The person or group whose tags or notes you want to clear is visib
   * 3a1. Notor displays a confirmation of the cancelling of the request
     
     Use case ends.
+    
+##### Use Case: Archiving a person
+
+**MSS**
+
+1. User <u> commands Notor to display the list of persons </u> (UC1).
+2. User requests to archive a specific person from the list.
+3. Notor archives the person, then displays a success message.
+
+   Use case ends.
 
 #### Basic Group Commands
 
