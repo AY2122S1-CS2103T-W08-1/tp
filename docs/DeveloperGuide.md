@@ -545,9 +545,7 @@ Precondition: The person or group whose tags or notes you want to clear is visib
     * 1a1.1 Notor displays a confirmation window.
         * 1a2.1 User confirms exit without saving Note. Use case resumes from step 2.
         * 1a2.2 User cancels exit via confirmation window. Use case ends.
-
-<div style="page-break-after: always;"></div>
-
+    
 #### Proposed Extended Use Cases ( Not Implemented )
 
 ##### Use case: User types a command
@@ -563,7 +561,6 @@ Precondition: The person or group whose tags or notes you want to clear is visib
    Use case ends.
 
 
-<div style="page-break-after: always;"></div>
 
 ### Non-Functional Requirements
 
